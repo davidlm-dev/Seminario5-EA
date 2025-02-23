@@ -6,9 +6,9 @@ const options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'API de Drones',
+            title: 'API',
             version: '1.0.0',
-            description: 'Documentación de la API para gestionar drones',
+            description: 'Documentación de la API para gestionar clases varias',
         },
         servers: [
             {
@@ -30,6 +30,20 @@ const options = {
                         maxSpeed: { type: 'number' },
                         range: { type: 'number' },
                         weight: { type: 'number' },
+                    },
+                },
+                Route: {
+                    type: 'object',
+                    required: ['name', 'startPosition', 'endPosition', 'durationTime', 'difficultyLevel', 'checkpointsPosition', 'recommendedSongs'],
+                    properties: {
+                        _id: { type: 'string' },
+                        name: { type: 'string' },
+                        startPosition: { type: 'number' },
+                        endPosition: { type: 'number' },
+                        durationTime: { type: 'number' },
+                        difficultyLevel: { type: 'number' },
+                        checkpointsPosition: { type: 'array', items: { type: 'number' } },
+                        recommendedSongs: { type: 'array', items: { type: 'string' } },
                     },
                 },
             },

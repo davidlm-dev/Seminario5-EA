@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db';
 import corsMiddleware from './middleware/cors';
 import droneRoutes from './routes/droneRoutes';
+import routeRoutes from './routes/routeRoutes';
 import { setupSwagger } from './config/swagger';
 
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(corsMiddleware);
 setupSwagger(app); // Agrega Swagger a la aplicación
 app.use('/api/drones', droneRoutes);
+app.use('/api/routes', routeRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -2,7 +2,7 @@ import mongoose, { Document, Schema } from 'mongoose';
 
 interface IDrone extends Document {
   name: string;
-  droneModel: string; // Cambiado de 'model' a 'droneModel'
+  droneModel: string;
   manufacturer: string;
   serialNumber: string;
   batteryLife: number;
@@ -13,7 +13,7 @@ interface IDrone extends Document {
 
 const droneSchema: Schema = new Schema({
   name: { type: String, required: true },
-  droneModel: { type: String, required: true }, // Cambiado de 'model' a 'droneModel'
+  droneModel: { type: String, required: true },
   manufacturer: { type: String, required: true },
   serialNumber: { type: String, required: true, unique: true },
   batteryLife: { type: Number, required: true },
