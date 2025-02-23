@@ -1,19 +1,13 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/dronesDB';
+const uri = 'mongodb://localhost:27017/DB1'; // URI propia
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(uri);
     console.log('MongoDB conectado correctamente');
   } catch (error) {
-    console.error('Error al conectar a MongoDB:', error);
+    console.error('Error al conectar con MongoDB:', error);
     process.exit(1);
   }
 };
