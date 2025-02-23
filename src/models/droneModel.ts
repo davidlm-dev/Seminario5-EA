@@ -22,4 +22,5 @@ const droneSchema: Schema = new Schema({
   weight: { type: Number, required: true },
 });
 
+export { IDrone };
 export default mongoose.model<IDrone>('Drone', droneSchema);
